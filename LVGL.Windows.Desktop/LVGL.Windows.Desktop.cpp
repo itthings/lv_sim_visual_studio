@@ -23,6 +23,7 @@
 
 #include "lvgl/lvgl.h"
 #include "lv_examples/lv_examples.h"
+#include "control.h"
 
 typedef struct lv_font_fmt_win_gdi_dsc_struct
 {
@@ -225,10 +226,10 @@ lv_font_t* lv_win_gdi_create_font(
 }
 
 static HINSTANCE g_InstanceHandle = nullptr;
-static int volatile g_WindowWidth = 0;
-static int volatile g_WindowHeight = 0;
+static int  g_WindowWidth = 320;
+static int volatile g_WindowHeight = 240;
 static HWND g_WindowHandle = nullptr;
-static int volatile g_WindowDPI = USER_DEFAULT_SCREEN_DPI;
+static int volatile g_WindowDPI =  USER_DEFAULT_SCREEN_DPI;
 
 static HDC g_BufferDCHandle = nullptr;
 static UINT32* g_PixelBuffer = nullptr;
@@ -305,7 +306,7 @@ void lv_create_display_driver(
     disp_drv->ver_res = ver_res;
     disp_drv->flush_cb = ::win_drv_flush;
     disp_drv->buffer = disp_buf;
-    disp_drv->dpi = g_WindowDPI;
+    disp_drv->dpi = 130;// g_WindowDPI;
     disp_drv->rounder_cb = win_drv_rounder_cb;
 }
 
@@ -469,7 +470,7 @@ LRESULT CALLBACK WndProc(
                 lv_disp_buf_t* old_disp_buf = lv_windows_disp->driver.buffer;
 
                 lv_disp_drv_t disp_drv;
-                ::lv_create_display_driver(&disp_drv, g_WindowWidth, g_WindowHeight);
+                ::lv_create_display_driver(&disp_drv, 320, 240);
                 ::lv_disp_drv_update(lv_windows_disp, &disp_drv);
                 delete old_disp_buf;
             }
@@ -623,16 +624,16 @@ bool win_hal_init(
         g_WindowHandle,
         32,
         font_name);
-
-    ::lv_theme_set_act(::lv_theme_material_init(
+        
+    ::lv_theme_set_act(::lv_theme_material_init
         ::lv_color_hex(0x01a2b1),
         ::lv_color_hex(0x44d1b6),
-        LV_THEME_MATERIAL_FLAG_LIGHT,
+        LV_THEME_MATERIAL_FLAG_DARK,
         font_small,
         font_normal,
         font_subtitle,
-        font_title));*/
-
+        font_title));
+        */
     ::ShowWindow(g_WindowHandle, nShowCmd);
     ::UpdateWindow(g_WindowHandle);
    
@@ -654,8 +655,11 @@ int WINAPI wWinMain(
     {
         return -1;
     }
+    //::start();
 
-    ::lv_demo_widgets();
+    ::createUI();
+   // ::lv_demo_music();
+   // ::lv_demo_widgets();
     //::lv_demo_keypad_encoder();
     //::lv_demo_benchmark();
 

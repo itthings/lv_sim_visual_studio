@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup Label="Globals">
     <ProjectGuid>{3CA6E070-4AC1-475E-BB17-CF29AE4806DF}</ProjectGuid>
@@ -11,6 +11,7 @@
   <ImportGroup Label="PropertySheets">
     <Import Project="..\LVGL.Core\LVGL.Core.props" />
     <Import Project="..\LVGL.Examples\LVGL.Examples.props" />
+	  <Import Project="..\ITThings.lvgl\ITThings.props" />
   </ImportGroup>
   <ItemDefinitionGroup>
     <ClCompile>
