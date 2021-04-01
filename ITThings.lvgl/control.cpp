@@ -567,6 +567,7 @@ static void controls_create(lv_obj_t *parent)
     lv_obj_t *btnUp = lv_btn_create(contRight, NULL);
     lv_obj_set_size(btnUp, 85, 85);
     lv_btn_set_checkable(btnUp, true);
+
     lv_obj_add_style(btnUp, LV_BTN_PART_MAIN, &style_btn_1);
     lv_obj_t *labelUp = lv_label_create(btnUp, NULL);
     lv_label_set_text(labelUp, LV_SYMBOL_UP);
