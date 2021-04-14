@@ -12,8 +12,8 @@
 #ifndef LV_DRV_CONF_H
 #define LV_DRV_CONF_H
 
-#include "lv_conf.h"
-
+//#include "lv_conf.h"
+#include <ITThings.lvgl/lv_conf.h>
 /*********************
  * DELAY INTERFACE
  *********************/
@@ -112,10 +112,11 @@
 #endif
 
 #if USE_WINDOWS
-#  define WINDOW_HOR_RES      480
-#  define WINDOW_VER_RES      320
+#  define WINDOW_HOR_RES      320
+#  define WINDOW_VER_RES      240
 #endif
-
+#define WINDOW_HOR_RES      320
+#define WINDOW_VER_RES      240
 /*----------------------------
  *  Native Windows (win32drv)
  *---------------------------*/

@@ -22,8 +22,9 @@
 #endif
 
 #include "lvgl/lvgl.h"
-#include "lv_examples/lv_examples.h"
+//#include "lv_examples/lv_examples.h"
 #include "lv_drivers/win32drv/win32drv.h"
+#include <ITThings.lvgl/control.h>
 
 #if _MSC_VER >= 1200
 // Restore compilation warnings.
@@ -50,8 +51,8 @@ int main()
      * Uncomment any one (and only one) of the functions below to run that
      * item.
      */
-
-    lv_demo_widgets();
+    createUI();
+    //lv_demo_widgets();
     //lv_demo_benchmark();
     //lv_demo_keypad_encoder();
     //lv_demo_printer();

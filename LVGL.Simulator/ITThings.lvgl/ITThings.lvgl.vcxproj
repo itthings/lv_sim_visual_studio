@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{6B74DF09-EDDF-4C3F-9A37-CB352F650BD6}</ProjectGuid>
+    <RootNamespace>LVGL</RootNamespace>
+    <MileProjectType>StaticLibrary</MileProjectType>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="..\Mile.Project\Mile.Project.Cpp.props" />
+  <Import Project="..\Mile.Project\Mile.Project.Cpp.VC-LTL.props" />
+  <ImportGroup Label="PropertySheets">
+  </ImportGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>C:\source\github\lv_sim_visual_studio\ITThings.lvgl;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>C:\source\github\lv_sim_visual_studio\LVGL.Simulator\lvgl\src;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;LV_LVGL_H_INCLUDE_SIMPLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Optimization Condition="'$(Configuration)'=='Release'">MinSpace</Optimization>
+      <AdditionalUsingDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </AdditionalUsingDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="control.cpp" />
+    <ClCompile Include="fonts\lv_font_arialblk_50.c" />
+    <ClCompile Include="fonts\lv_font_arialblk_60.c" />
+    <ClCompile Include="fonts\lv_font_arialb_20.c" />
+    <ClCompile Include="fonts\lv_font_arialb_30.c" />
+    <ClCompile Include="fonts\lv_font_arialb_40.c" />
+    <ClCompile Include="fonts\lv_font_arialb_50.c" />
+    <ClCompile Include="fonts\lv_font_arialb_60.c" />
+    <ClCompile Include="fonts\lv_font_arialb_70.c" />
+    <ClCompile Include="fonts\lv_font_arialb_80.c" />
+    <ClCompile Include="fonts\lv_font_arial_60.c" />
+    <ClCompile Include="fonts\lv_font_arial_70.c" />
+    <ClCompile Include="fonts\lv_font_arial_80.c" />
+    <ClCompile Include="fonts\lv_font_roboto_black_50.c" />
+    <ClCompile Include="fonts\lv_font_roboto_black_501.c" />
+    <ClCompile Include="fonts\lv_font_roboto_bold_10.c" />
+    <ClCompile Include="fonts\lv_font_roboto_bold_12.c" />
+    <ClCompile Include="fonts\lv_font_roboto_bold_14.c" />
+    <ClCompile Include="fonts\lv_font_roboto_bold_16.c" />
+    <ClCompile Include="fonts\lv_font_roboto_bold_18.c" />
+    <ClCompile Include="fonts\lv_font_roboto_bold_20.c" />
+    <ClCompile Include="fonts\lv_font_roboto_bold_22.c" />
+    <ClCompile Include="fonts\lv_font_roboto_bold_24.c" />
+    <ClCompile Include="fonts\lv_font_roboto_bold_30.c" />
+    <ClCompile Include="fonts\lv_font_roboto_bold_40.c" />
+    <ClCompile Include="fonts\lv_font_roboto_bold_50.c" />
+    <ClCompile Include="fonts\lv_font_roboto_bold_60.c" />
+    <ClCompile Include="fonts\lv_font_roboto_bold_601.c" />
+    <ClCompile Include="fonts\lv_font_roboto_bold_602.c" />
+    <ClCompile Include="fonts\lv_font_roboto_med_12.c" />
+    <ClCompile Include="fonts\lv_font_roboto_reg_10.c" />
+    <ClCompile Include="fonts\lv_font_roboto_reg_12.c" />
+    <ClCompile Include="fonts\lv_font_roboto_reg_14.c" />
+    <ClCompile Include="fonts\lv_font_roboto_reg_16.c" />
+    <ClCompile Include="fonts\lv_font_roboto_reg_18.c" />
+    <ClCompile Include="fonts\lv_font_roboto_reg_20.c" />
+    <ClCompile Include="fonts\lv_font_roboto_reg_22.c" />
+    <ClCompile Include="fonts\lv_font_roboto_reg_24.c" />
+    <ClCompile Include="fonts\lv_font_roboto_reg_30.c" />
+    <ClCompile Include="fonts\lv_font_roboto_reg_40.c" />
+    <ClCompile Include="fonts\lv_font_roboto_reg_50.c" />
+    <ClCompile Include="fonts\lv_font_roboto_reg_60.c" />
+    <ClCompile Include="images\lv_image_clouds.c" />
+    <ClCompile Include="images\lv_image_gas.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="control.h" />
+    <ClInclude Include="lv_conf.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ITThings.props" />
+  </ItemGroup>
+  <Import Project="..\Mile.Project\Mile.Project.Cpp.targets" />
+</Project>

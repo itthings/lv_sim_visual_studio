@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="control.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fonts\lv_font_arial_60.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fonts\lv_font_arial_70.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fonts\lv_font_arial_80.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fonts\lv_font_arialb_20.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fonts\lv_font_arialb_30.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fonts\lv_font_arialb_40.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fonts\lv_font_arialb_50.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fonts\lv_font_arialb_60.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fonts\lv_font_arialb_70.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fonts\lv_font_arialb_80.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fonts\lv_font_arialblk_50.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fonts\lv_font_arialblk_60.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fonts\lv_font_roboto_black_50.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fonts\lv_font_roboto_black_501.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fonts\lv_font_roboto_bold_10.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fonts\lv_font_roboto_bold_12.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fonts\lv_font_roboto_bold_14.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fonts\lv_font_roboto_bold_16.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fonts\lv_font_roboto_bold_18.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fonts\lv_font_roboto_bold_20.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fonts\lv_font_roboto_bold_22.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fonts\lv_font_roboto_bold_24.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fonts\lv_font_roboto_bold_30.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fonts\lv_font_roboto_bold_40.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fonts\lv_font_roboto_bold_50.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fonts\lv_font_roboto_bold_60.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fonts\lv_font_roboto_bold_601.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fonts\lv_font_roboto_bold_602.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fonts\lv_font_roboto_med_12.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fonts\lv_font_roboto_reg_10.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fonts\lv_font_roboto_reg_12.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fonts\lv_font_roboto_reg_14.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fonts\lv_font_roboto_reg_16.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fonts\lv_font_roboto_reg_18.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fonts\lv_font_roboto_reg_20.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fonts\lv_font_roboto_reg_22.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fonts\lv_font_roboto_reg_24.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fonts\lv_font_roboto_reg_30.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fonts\lv_font_roboto_reg_40.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fonts\lv_font_roboto_reg_50.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fonts\lv_font_roboto_reg_60.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="images\lv_image_clouds.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="images\lv_image_gas.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="control.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="lv_conf.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ITThings.props" />
+  </ItemGroup>
+</Project>

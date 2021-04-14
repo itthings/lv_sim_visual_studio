@@ -1,13 +1,13 @@
 ﻿/**
  * @file lv_ex_conf.h
- * Configuration file for v7.11.0
+ * Configuration file for v7.10.0
  *
  */
 /*
  * COPY THIS FILE AS lv_ex_conf.h
  */
 
-#if 0 /*Set it to "1" to enable the content*/
+#if 1 /*Set it to "1" to enable the content*/
 
 #ifndef LV_EX_CONF_H
 #define LV_EX_CONF_H
