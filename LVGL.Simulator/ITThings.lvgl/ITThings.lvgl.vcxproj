@@ -72,10 +72,12 @@
     <ClCompile Include="fonts\lv_font_roboto_reg_60.c" />
     <ClCompile Include="images\lv_image_clouds.c" />
     <ClCompile Include="images\lv_image_gas.c" />
+    <ClCompile Include="screensaver.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="control.h" />
     <ClInclude Include="lv_conf.h" />
+    <ClInclude Include="screensaver.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ITThings.props" />

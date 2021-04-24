@@ -6,6 +6,8 @@
 //#include <TFT_eSPI.h>
 #include "control.h"
 #include <stdio.h>
+#include <sstream>
+
 static void controls_create(lv_obj_t* parent);
 static void visuals_create(lv_obj_t* parent);
 static void selectors_create(lv_obj_t* parent);
@@ -235,6 +237,10 @@ static void kb_event_cb(lv_obj_t * _kb, lv_event_t e)
 lv_obj_t* btnAuto;
 lv_obj_t* btnOn;
 lv_obj_t* btnOff;
+lv_obj_t* labelActual;
+float TargetTemp =  15.1;
+lv_obj_t* btnUp;
+lv_obj_t* btnDown;
 
 static void btnAuto_cb(lv_obj_t* obj, lv_event_t event)
 {
@@ -273,6 +279,39 @@ static void btnOff_cb(lv_obj_t* obj, lv_event_t event)
 }
 
 
+
+static void btnUp_cb(lv_obj_t* obj, lv_event_t event)
+{
+    if (event == LV_EVENT_CLICKED) {
+        char* act;
+        act = lv_label_get_text(labelActual);
+        TargetTemp=TargetTemp+0.1;
+        std::ostringstream stm;
+        stm << TargetTemp;
+        lv_label_set_text(labelActual, stm.str().data());
+        printf("Clicked\n");
+    }
+    else if (event == LV_EVENT_VALUE_CHANGED) {
+     
+        printf("Toggled\n");
+    }
+}
+static void btnDown_cb(lv_obj_t* obj, lv_event_t event)
+{
+    if (event == LV_EVENT_CLICKED) {
+        char* act;
+        act = lv_label_get_text(labelActual);
+        TargetTemp = TargetTemp - 0.1;;
+        std::ostringstream stm;
+        stm << TargetTemp;
+        lv_label_set_text(labelActual, stm.str().data());
+        printf("Clicked\n");
+    }
+    else if (event == LV_EVENT_VALUE_CHANGED) {
+  
+        printf("Toggled\n");
+    }
+}
 
 void createUI()
 {
@@ -329,14 +368,15 @@ static void controls_create(lv_obj_t* parent)
     static lv_style_t style_btn_1;
     lv_style_init(&style_btn_1);
     // lv_style_set_radius(&style_btn_1, )
-    lv_style_set_transition_time(&style_btn_1, LV_STATE_PRESSED, 400);
+    lv_style_set_transition_time(&style_btn_1, LV_STATE_PRESSED, 200);
     lv_style_set_transition_time(&style_btn_1, LV_STATE_DEFAULT, 0);
     lv_style_set_transition_delay(&style_btn_1, LV_STATE_DEFAULT, 200);
+    lv_style_set_scale_end_color(&style_btn_1, LV_STATE_PRESSED, LV_COLOR_TEAL);
     lv_style_set_outline_width(&style_btn_1, LV_STATE_DEFAULT, 0);
-    lv_style_set_outline_width(&style_btn_1, LV_STATE_PRESSED, 5);
+    lv_style_set_outline_width(&style_btn_1, LV_STATE_PRESSED, 1);
     lv_style_set_outline_opa(&style_btn_1, LV_STATE_DEFAULT, LV_OPA_COVER);
     lv_style_set_outline_opa(&style_btn_1, LV_STATE_FOCUSED, LV_OPA_COVER); /*Just to be sure, the theme might use it*/
-    lv_style_set_outline_opa(&style_btn_1, LV_STATE_PRESSED, LV_OPA_TRANSP);
+    lv_style_set_outline_opa(&style_btn_1, LV_STATE_PRESSED, LV_OPA_COVER);
     lv_style_set_transition_prop_1(&style_btn_1, LV_STATE_DEFAULT, LV_STYLE_OUTLINE_OPA);
     lv_style_set_transition_prop_2(&style_btn_1, LV_STATE_DEFAULT, LV_STYLE_OUTLINE_WIDTH);
     lv_style_set_radius(&style_btn_1, LV_STATE_DEFAULT, 6);
@@ -455,7 +495,7 @@ static void controls_create(lv_obj_t* parent)
     lv_label_set_text(labelActualTitle, "Inside");
     lv_obj_set_pos(labelActualTitle, 40, 3);
     /*,,,,,,,,,,,,,,,,*/
-    lv_obj_t* labelActual = lv_label_create(contMid, NULL);
+    labelActual = lv_label_create(contMid, NULL);
     lv_obj_add_style(labelActual, LV_LABEL_PART_MAIN, &style_temp_actual);
     lv_label_set_align(labelActual, LV_LABEL_ALIGN_CENTER);
     lv_label_set_text(labelActual, "18.9");
@@ -610,14 +650,16 @@ static void controls_create(lv_obj_t* parent)
     lv_obj_set_width_fit(contRight, grid_w);
     //lv_obj_add_style(contRight, LV_CONT_PART_MAIN, &style_transcontR);
 
-    lv_obj_t* btnUp = lv_btn_create(contRight, NULL);
+    btnUp = lv_btn_create(contRight, NULL);
+    lv_obj_set_event_cb(btnUp, btnUp_cb);
     lv_obj_set_size(btnUp, 85, 85);
     //lv_btn_set_checkable(btnUp, true);
     lv_obj_add_style(btnUp, LV_BTN_PART_MAIN, &style_btn_1);
     lv_obj_t* labelUp = lv_label_create(btnUp, NULL);
     lv_label_set_text(labelUp, LV_SYMBOL_UP);
 
-    lv_obj_t* btnDown = lv_btn_create(contRight, NULL);
+    btnDown = lv_btn_create(contRight, NULL);
+    lv_obj_set_event_cb(btnDown, btnDown_cb);
     lv_obj_set_size(btnDown, 85, 85);
     //lv_btn_set_checkable(btnDown, true);
     lv_obj_add_style(btnDown, LV_BTN_PART_MAIN, &style_btn_1);

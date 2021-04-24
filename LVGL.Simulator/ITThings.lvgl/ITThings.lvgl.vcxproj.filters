@@ -147,12 +147,18 @@
     <ClCompile Include="images\lv_image_gas.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="screensaver.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="control.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="lv_conf.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="screensaver.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
