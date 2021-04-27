@@ -9,7 +9,7 @@
   <Import Project="Mile.Project\Mile.Project.Cpp.props" />
   <Import Project="Mile.Project\Mile.Project.Cpp.VC-LTL.props" />
   <PropertyGroup>
-    <IncludePath>C:\source\github\lv_sim_visual_studio\LVGL.Simulator\ITThings.lvgl\fonts;C:\source\github\lv_sim_visual_studio\LVGL.Simulator\ITThings.lvgl;$(MSBuildThisFileDirectory);$(IncludePath)</IncludePath>
+    <IncludePath>D:\GIT\lv_sim_visual_studio\LVGL.Simulator\ITThings.lvgl\fonts;D:\GIT\github\lv_sim_visual_studio\LVGL.Simulator\ITThings.lvgl;$(MSBuildThisFileDirectory);$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup>
     <ClCompile>

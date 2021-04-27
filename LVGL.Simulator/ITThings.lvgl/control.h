@@ -1,8 +1,6 @@
-﻿#pragma once
-#ifdef __cplusplus
-extern "C" {
-#endif
-
+﻿#ifndef CONTROL_H
+#define CONTROL_H
+//#include  <global.h>
     /*********************
      *      INCLUDES
      *********************/
@@ -11,6 +9,7 @@ extern "C" {
 #else
      //#include "../lvgl/lvgl.h"
 #endif  
+//#include "RemoteDebug.h"
 
 #if defined(LV_EX_CONF_PATH)
 #define __LV_TO_STR_AUX(x) #x
@@ -23,10 +22,10 @@ extern "C" {
 #else
 //#include "lv_ex_conf.h"
 #endif
-    LV_IMG_DECLARE(lv_image_gas)
-        LV_IMG_DECLARE(lv_image_clouds)
-        void createUI();
+LV_IMG_DECLARE(lv_image_gas)
+LV_IMG_DECLARE(lv_image_clouds)
+void createUI();
 
-#ifdef __cplusplus
-}
+// #ifdef __cplusplus
+// }
 #endif

@@ -2,11 +2,10 @@
 //#include "images\lv_image_gas.c"
 //#include "images\lv_image_clouds.c"
 #include <lvgl.h>
-
+//#include <Arduino.h>
 //#include <TFT_eSPI.h>
 #include "control.h"
-#include <stdio.h>
-#include <sstream>
+//#include "RemoteDebug.h"
 
 static void controls_create(lv_obj_t* parent);
 static void visuals_create(lv_obj_t* parent);
@@ -28,6 +27,8 @@ static lv_obj_t* t1;
 static lv_obj_t* t2;
 static lv_obj_t* t3;
 static lv_obj_t* kb;
+
+//extern RemoteDebug Debug;
 
 static lv_style_t style_box;
 void ppp(void)
@@ -234,104 +235,6 @@ static void kb_event_cb(lv_obj_t * _kb, lv_event_t e)
 }
 */
 
-lv_obj_t* btnAuto;
-lv_obj_t* btnOn;
-lv_obj_t* btnOff;
-lv_obj_t* labelActual;
-float TargetTemp =  15.1;
-lv_obj_t* btnUp;
-lv_obj_t* btnDown;
-
-static void btnAuto_cb(lv_obj_t* obj, lv_event_t event)
-{
-    if (event == LV_EVENT_CLICKED) {
-        printf("Clicked\n");
-    }
-    else if (event == LV_EVENT_VALUE_CHANGED) {
-        lv_btn_set_state(btnOn, LV_BTN_STATE_RELEASED);
-        lv_btn_set_state(btnOff, LV_BTN_STATE_RELEASED);
-        printf("Toggled\n");
-    }
-}
-
-static void btnOn_cb(lv_obj_t* obj, lv_event_t event)
-{
-    if (event == LV_EVENT_CLICKED) {
-        printf("Clicked\n");
-    }
-    else if (event == LV_EVENT_VALUE_CHANGED) {
-        lv_btn_set_state(btnAuto, LV_BTN_STATE_RELEASED);
-        lv_btn_set_state(btnOff, LV_BTN_STATE_RELEASED);
-        printf("Toggled\n");
-    }
-}
-
-static void btnOff_cb(lv_obj_t* obj, lv_event_t event)
-{
-    if (event == LV_EVENT_CLICKED) {
-        printf("Clicked\n");
-    }
-    else if (event == LV_EVENT_VALUE_CHANGED) {
-        lv_btn_set_state(btnAuto, LV_BTN_STATE_RELEASED);
-        lv_btn_set_state(btnOn, LV_BTN_STATE_RELEASED);
-        printf("Toggled\n");
-    }
-}
-
-
-
-static void btnUp_cb(lv_obj_t* obj, lv_event_t event)
-{
-    if (event == LV_EVENT_CLICKED) {
-        char* act;
-        act = lv_label_get_text(labelActual);
-        TargetTemp=TargetTemp+0.1;
-        std::ostringstream stm;
-        stm << TargetTemp;
-        lv_label_set_text(labelActual, stm.str().data());
-        printf("Clicked\n");
-    }
-    else if (event == LV_EVENT_VALUE_CHANGED) {
-     
-        printf("Toggled\n");
-    }
-}
-static void btnDown_cb(lv_obj_t* obj, lv_event_t event)
-{
-    if (event == LV_EVENT_CLICKED) {
-        char* act;
-        act = lv_label_get_text(labelActual);
-        TargetTemp = TargetTemp - 0.1;;
-        std::ostringstream stm;
-        stm << TargetTemp;
-        lv_label_set_text(labelActual, stm.str().data());
-        printf("Clicked\n");
-    }
-    else if (event == LV_EVENT_VALUE_CHANGED) {
-  
-        printf("Toggled\n");
-    }
-}
-
-void createUI()
-{
-
-    tv = lv_tabview_create(lv_scr_act(), NULL);
-
-
-    t1 = lv_tabview_add_tab(tv, "Control");
-    t2 = lv_tabview_add_tab(tv, "Usage");
-    t3 = lv_tabview_add_tab(tv, "Settings");
-
-    lv_style_init(&style_box);
-    lv_style_set_value_align(&style_box, LV_STATE_DEFAULT, LV_ALIGN_OUT_TOP_LEFT);
-    lv_style_set_value_ofs_y(&style_box, LV_STATE_DEFAULT, -LV_DPX(10));
-    lv_style_set_margin_top(&style_box, LV_STATE_DEFAULT, LV_DPX(30));
-
-    controls_create(t1);
-    visuals_create(t2);
-    selectors_create(t3);
-}
 
 static void controls_create(lv_obj_t* parent)
 {
@@ -368,15 +271,14 @@ static void controls_create(lv_obj_t* parent)
     static lv_style_t style_btn_1;
     lv_style_init(&style_btn_1);
     // lv_style_set_radius(&style_btn_1, )
-    lv_style_set_transition_time(&style_btn_1, LV_STATE_PRESSED, 200);
+    lv_style_set_transition_time(&style_btn_1, LV_STATE_PRESSED, 400);
     lv_style_set_transition_time(&style_btn_1, LV_STATE_DEFAULT, 0);
     lv_style_set_transition_delay(&style_btn_1, LV_STATE_DEFAULT, 200);
-    lv_style_set_scale_end_color(&style_btn_1, LV_STATE_PRESSED, LV_COLOR_TEAL);
     lv_style_set_outline_width(&style_btn_1, LV_STATE_DEFAULT, 0);
-    lv_style_set_outline_width(&style_btn_1, LV_STATE_PRESSED, 1);
+    lv_style_set_outline_width(&style_btn_1, LV_STATE_PRESSED, 5);
     lv_style_set_outline_opa(&style_btn_1, LV_STATE_DEFAULT, LV_OPA_COVER);
     lv_style_set_outline_opa(&style_btn_1, LV_STATE_FOCUSED, LV_OPA_COVER); /*Just to be sure, the theme might use it*/
-    lv_style_set_outline_opa(&style_btn_1, LV_STATE_PRESSED, LV_OPA_COVER);
+    lv_style_set_outline_opa(&style_btn_1, LV_STATE_PRESSED, LV_OPA_TRANSP);
     lv_style_set_transition_prop_1(&style_btn_1, LV_STATE_DEFAULT, LV_STYLE_OUTLINE_OPA);
     lv_style_set_transition_prop_2(&style_btn_1, LV_STATE_DEFAULT, LV_STYLE_OUTLINE_WIDTH);
     lv_style_set_radius(&style_btn_1, LV_STATE_DEFAULT, 6);
@@ -421,8 +323,7 @@ static void controls_create(lv_obj_t* parent)
     lv_obj_add_style(contLeft, LV_CONT_PART_MAIN, &style_transcontL);
     lv_obj_set_width_fit(contLeft, grid_w);
 
-    btnAuto = lv_btn_create(contLeft, NULL);
-    lv_obj_set_event_cb(btnAuto, btnAuto_cb);
+    lv_obj_t* btnAuto = lv_btn_create(contLeft, NULL);
     lv_obj_set_size(btnAuto, grid_w - 20, 55);
     lv_btn_set_checkable(btnAuto, true);
     lv_obj_add_style(btnAuto, LV_BTN_PART_MAIN, &style_btn_1);
@@ -430,16 +331,14 @@ static void controls_create(lv_obj_t* parent)
     lv_obj_t* labelAuto = lv_label_create(btnAuto, NULL);
     lv_label_set_text(labelAuto, "Auto");
 
-    btnOn = lv_btn_create(contLeft, NULL);
-    lv_obj_set_event_cb(btnOn, btnOn_cb);
+    lv_obj_t* btnOn = lv_btn_create(contLeft, NULL);
     lv_obj_set_size(btnOn, grid_w - 20, 55);
     lv_btn_set_checkable(btnOn, true);
     lv_obj_add_style(btnOn, LV_BTN_PART_MAIN, &style_btn_1);
     lv_obj_t* labelOn = lv_label_create(btnOn, NULL);
     lv_label_set_text(labelOn, "On");
 
-    btnOff = lv_btn_create(contLeft, NULL);
-    lv_obj_set_event_cb(btnOff, btnOff_cb);
+    lv_obj_t* btnOff = lv_btn_create(contLeft, NULL);
     lv_obj_set_size(btnOff, grid_w - 20, 55);
     lv_btn_set_checkable(btnOff, true);
     lv_obj_add_style(btnOff, LV_BTN_PART_MAIN, &style_btn_1);
@@ -495,7 +394,7 @@ static void controls_create(lv_obj_t* parent)
     lv_label_set_text(labelActualTitle, "Inside");
     lv_obj_set_pos(labelActualTitle, 40, 3);
     /*,,,,,,,,,,,,,,,,*/
-    labelActual = lv_label_create(contMid, NULL);
+    lv_obj_t* labelActual = lv_label_create(contMid, NULL);
     lv_obj_add_style(labelActual, LV_LABEL_PART_MAIN, &style_temp_actual);
     lv_label_set_align(labelActual, LV_LABEL_ALIGN_CENTER);
     lv_label_set_text(labelActual, "18.9");
@@ -650,18 +549,16 @@ static void controls_create(lv_obj_t* parent)
     lv_obj_set_width_fit(contRight, grid_w);
     //lv_obj_add_style(contRight, LV_CONT_PART_MAIN, &style_transcontR);
 
-    btnUp = lv_btn_create(contRight, NULL);
-    lv_obj_set_event_cb(btnUp, btnUp_cb);
+    lv_obj_t* btnUp = lv_btn_create(contRight, NULL);
     lv_obj_set_size(btnUp, 85, 85);
-    //lv_btn_set_checkable(btnUp, true);
+    lv_btn_set_checkable(btnUp, true);
     lv_obj_add_style(btnUp, LV_BTN_PART_MAIN, &style_btn_1);
     lv_obj_t* labelUp = lv_label_create(btnUp, NULL);
     lv_label_set_text(labelUp, LV_SYMBOL_UP);
 
-    btnDown = lv_btn_create(contRight, NULL);
-    lv_obj_set_event_cb(btnDown, btnDown_cb);
+    lv_obj_t* btnDown = lv_btn_create(contRight, NULL);
     lv_obj_set_size(btnDown, 85, 85);
-    //lv_btn_set_checkable(btnDown, true);
+    lv_btn_set_checkable(btnDown, true);
     lv_obj_add_style(btnDown, LV_BTN_PART_MAIN, &style_btn_1);
     lv_obj_t* labelDown = lv_label_create(btnDown, NULL);
     lv_label_set_text(labelDown, LV_SYMBOL_DOWN);
@@ -982,4 +879,28 @@ void start()
     // tv = lv_tabview_create(lv_scr_act(), NULL);
 
      //createUI(); 
+}
+
+void createUI()//RemoteDebug* debug)
+{
+
+    //yield();
+        //delay(10000);
+       //debugV("createUI start");
+
+    tv = lv_tabview_create(lv_scr_act(), NULL);
+
+
+    t1 = lv_tabview_add_tab(tv, "Control");
+    t2 = lv_tabview_add_tab(tv, "ECG :)");
+    t3 = lv_tabview_add_tab(tv, "Settings");
+
+    lv_style_init(&style_box);
+    lv_style_set_value_align(&style_box, LV_STATE_DEFAULT, LV_ALIGN_OUT_TOP_LEFT);
+    lv_style_set_value_ofs_y(&style_box, LV_STATE_DEFAULT, -LV_DPX(10));
+    lv_style_set_margin_top(&style_box, LV_STATE_DEFAULT, LV_DPX(30));
+
+    controls_create(t1);
+    visuals_create(t2);
+    selectors_create(t3);
 }

@@ -14,7 +14,7 @@
     <IncludePath>C:\source\github\lv_sim_visual_studio\ITThings.lvgl;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>C:\source\github\lv_sim_visual_studio\LVGL.Simulator\lvgl\src;$(IncludePath)</IncludePath>
+    <IncludePath>d:\git\lv_sim_visual_studio\LVGL.Simulator\lvgl\src;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup>
     <ClCompile>
