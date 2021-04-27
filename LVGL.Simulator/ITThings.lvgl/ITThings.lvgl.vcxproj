@@ -11,7 +11,7 @@
   <ImportGroup Label="PropertySheets">
   </ImportGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>C:\source\github\lv_sim_visual_studio\ITThings.lvgl;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir);$(SolutionDir)\LVGL.Simulator\lvgl;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <IncludePath>d:\git\lv_sim_visual_studio\LVGL.Simulator\lvgl\src;$(IncludePath)</IncludePath>

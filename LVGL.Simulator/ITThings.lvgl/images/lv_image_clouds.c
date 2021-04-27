@@ -1,4 +1,11 @@
-﻿#if defined(LV_LVGL_H_INCLUDE_SIMPLE)
+﻿#ifndef LV_CLOUDS_H
+#define LV_CLOUDS_H
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+#if defined(LV_LVGL_H_INCLUDE_SIMPLE)
 #include "lvgl.h"
 #else
 #include "lvgl/lvgl.h"
@@ -217,3 +224,8 @@ const lv_img_dsc_t lv_image_clouds = {
   .data = lv_image_clouds_map,
 };
 
+#ifdef __cplusplus
+} /* extern "C" */
+#endif
+
+#endif /*LV_MASK_H*/

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup Label="Globals">
     <ProjectGuid>{3CA6E070-4AC1-475E-BB17-CF29AE4806DF}</ProjectGuid>
@@ -9,7 +9,7 @@
   <Import Project="Mile.Project\Mile.Project.Cpp.props" />
   <Import Project="Mile.Project\Mile.Project.Cpp.VC-LTL.props" />
   <PropertyGroup>
-    <IncludePath>D:\GIT\lv_sim_visual_studio\LVGL.Simulator\ITThings.lvgl\fonts;D:\GIT\github\lv_sim_visual_studio\LVGL.Simulator\ITThings.lvgl;$(MSBuildThisFileDirectory);$(IncludePath)</IncludePath>
+    <IncludePath>$(MSBuildThisFileDirectory);$(SolutionDir)\LVGL.Simulator\ITThings.lvgl\fonts;$(SolutionDir)\LVGL.Simulator\ITThings.lvgl\;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup>
     <ClCompile>
@@ -734,7 +734,7 @@
     <ClInclude Include="lv_drivers\indev\mouse.h" />
     <ClInclude Include="lv_drivers\indev\mousewheel.h" />
     <ClInclude Include="lv_drivers\indev\XPT2046.h" />
-    <ClInclude Include="lv_drivers\wayland\wayland.h" />
+  <!--  <ClInclude Include="lv_drivers\wayland\wayland.h" />-->
     <ClInclude Include="lv_drivers\win32drv\win32drv.h" />
     <ClInclude Include="lv_drivers\lv_drv_conf_template.h" />
     <ClInclude Include="lv_drivers\win_drv.h" />
@@ -759,7 +759,7 @@
     <ClCompile Include="lv_drivers\indev\mouse.c" />
     <ClCompile Include="lv_drivers\indev\mousewheel.c" />
     <ClCompile Include="lv_drivers\indev\XPT2046.c" />
-    <ClCompile Include="lv_drivers\wayland\wayland.c" />
+  <!--    <ClCompile Include="lv_drivers\wayland\wayland.c" />-->
     <ClCompile Include="lv_drivers\win32drv\win32drv.c" />
     <ClCompile Include="lv_drivers\win_drv.c" />
   </ItemGroup>
@@ -770,7 +770,7 @@
     <None Include="lv_drivers\docs\astyle_h" />
     <None Include="lv_drivers\gtkdrv\broadway.png" />
     <None Include="lv_drivers\gtkdrv\README.md" />
-    <None Include="lv_drivers\wayland\README.md" />
+   <!--   <None Include="lv_drivers\wayland\README.md" />-->
     <None Include="lv_drivers\.git" />
     <None Include="lv_drivers\.gitignore" />
     <None Include="lv_drivers\CMakeLists.txt" />
